@@ -1,0 +1,88 @@
+1) configure git global or local level. it stores credentials
+git configure --global user.name "Awais Mehnga"
+git configure --global user.email "awaismehngaa@gmail.com"
+git config --list (details of configuration)
+
+2)clone & status
+
+a) clone a repo on local machine:
+	git clone "link of repo"
+
+ls=>list files (show files)
+ls -a (show hidden files)
+
+b) Status tell us about the status of code
+	git status
+
+after updating file we need to "add" and "commit"
+
+4 types of status:
+modify=> if change in file
+untracked=> if new file created
+staged=> file is ready to be commited (after add)
+unmodified=> no change (after commit)
+
+3) Add and Commit (Local)
+add- new files in staging area
+	git add <file name>
+	git add . (to add all files)
+commit- record of changes 
+	git commit -m "some change"	
+
+4) Push Command
+	git push origin main
+
+=> origin is actual repo 
+=> main is the branch in which we are pushing
+
+5) Init Command
+used to create a new git repo
+	git init
+	git remote add origin <repo link> 
+	git remote -v (to verify remote)
+	git branch (to check branch on which we are. currently on master branch which we change to main)
+	git branch -M main (to rename branch)
+	git push origin main
+we can use "git push -u origin main" here -u is upstream which mean we are working on the project for long time and want to push on the origin main so next time instead of writing complete we just use "git push"
+
+
+6) Git Branches
+making copy of main in each branch and change that which we can merge later on.
+
+	git branch (to check branch)
+	git branch -M AMB (change branch name)
+	git checkout <branch name> (to navigate)
+	git checkout -b <branch name> (create new branch)
+	git branch -d <branc name> (to delete)
+
+7) Merging branches
+
+method 1:
+	git diff <branch name(to which need to compare)> (to compare commits, branches, files and more)
+	git merge <branch name> (to merge to branches)
+
+method 2:
+	Create a PR (PUll request)
+	it lets you tel other about changes that you have pushed to a branch in a repo on github
+
+8) PUll command
+to fetch and download content from a remote repo to local repo
+
+	git pull origin main
+
+9) Resolving merge conflicts 
+	event when git is unable to automatically resolve differences.
+
+10) UNDO changes
+case1: staged changes
+	git reset <file name>
+	git reset
+
+case2: commited changes (for one commit)
+	git reset HEAD~1
+
+case3: commited changed (multiple commits)
+	git reset <commit hash>
+	git reset --hard <commit hash>
+
+11) Fork
